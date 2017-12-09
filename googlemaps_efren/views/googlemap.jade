@@ -6,11 +6,14 @@ html
       #map {
       height: 400px;
       width: 600px;
+      margin-left: 20%;
+      margin-right: 20%;
       }
   |   
   body
-    h3 Marcadores en google maps :p
-    h4 Use jade para mostrar, node para el servidor local y solo falta hacer un .js que vaya a tu bd por los puntos que mientras se pasan por app.js
+    h1 Marcadores en google maps :p
+    br
+    br
     |     
     #map
     |     
@@ -18,10 +21,19 @@ html
       function initMap() {
       //var uluru = {lat: -25.363, lng: 131.044};
       var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
+      zoom: 8,
       //punto central a definir *** 
-      center: {lat: -28.024, lng: 140.887}
+      center: {lat:19.4326077, lng:-99.13320799999997}
       });
+      
+      
+      var data = !{JSON.stringify(marcadores)}
+        for(i=0;i<!{JSON.stringify(total)};i++){
+            var marker = new google.maps.Marker({
+                position: data[i],
+                map: map
+                });
+        } 
       
       /*
       //cuando ya tengas el puntosProvider.js
@@ -34,7 +46,7 @@ html
                 });
         } 
       
-      */
+      
       
       
         var data = !{JSON.stringify(ulur)}
@@ -43,7 +55,7 @@ html
                 position: data[i],
                 map: map
                 });
-        } 
+        } */
       }
     |     
     script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBBCPkawPFIoBA1ljdpKxaP6qlCoQNL8DM\
